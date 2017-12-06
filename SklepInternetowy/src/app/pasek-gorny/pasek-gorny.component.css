@@ -1,0 +1,18 @@
+.navbar-inverse {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+#Koszyk {
+  color: white;
+}
+
+.btn-default {
+  float: right;
+}
+
+.container-fluid {
+  margin-left: 10%;
+  margin-right: 18%;
+}

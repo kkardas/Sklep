@@ -1,0 +1,54 @@
+.well-lg {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  margin-top: 3%;
+  height: 250px;
+}
+
+.well {
+  font-family: "Times New Roman", serif;
+}
+
+#nazwa {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+#cena {
+  float: right;
+  background: royalblue;
+  font-weight: bolder;
+  color: white;
+  border-radius: 10px;
+}
+
+#doKoszyka {
+  float: right;
+  width: 10%;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+img.top {
+  float: left;
+}
+
+.opis {
+  font-family: monospace;
+  width: 10ch;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+h1 {
+  font-size: 16px;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+.imgM {
+  width: 200px;
+  height: 200px;
+}

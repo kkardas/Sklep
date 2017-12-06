@@ -1,0 +1,48 @@
+<nav>
+  <app-navigation></app-navigation>
+</nav>
+
+<body>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Imię</th>
+    <th>Nazwisko</th>
+    <th>Adres</th>
+    <th>Wartość</th>
+    <th>Szczegóły</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let order of orders">
+  <tr>
+    <td>{{order.imie}}</td>
+    <td>{{order.nazwisko}}</td>
+    <td>{{order.adres}}</td>
+    <td>{{order.wartosc}}</td>
+    <td>
+      <button type="button"
+              class="btn btn-info"
+              (click)="getDetailsOrder(order)">
+        Pokaż szczegóły
+      </button>
+    </td>
+  </tr>
+  <div *ngIf="order._id == selectedId">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>Nazwa</th>
+        <th>Ilość</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let product of productsInDetails">
+      <tr>
+        <td>{{product.nazwa}}</td>
+        <td>{{product.ilosc}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  </tbody>
+</table>
+</body>

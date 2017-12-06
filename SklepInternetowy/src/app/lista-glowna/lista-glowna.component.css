@@ -1,0 +1,30 @@
+pagination-controls {
+  float: right;
+  /*background-color: lightgrey;*/
+}
+
+.lista {
+  margin-right: 10%;
+  background-color: lightgrey;
+  border-radius: 25px;
+  background: -webkit-linear-gradient(left top, lightgrey , white); /* Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, lightgrey , white); /* Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, lightgrey , white); /* Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, lightgrey , white); /* Standard syntax */
+}
+
+#Naglowek {
+  font-family: "Georgia", serif;
+  font-size: 15px;
+  font-weight: bolder;
+  margin-left: 3%;
+}
+
+app-karuzela {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 50%;
+  margin-right: 10%;
+  width: 90%;
+
+}

@@ -1,0 +1,29 @@
+#formularz {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  font-family: "Georgia", serif;
+  font-size: 17px;
+  font-weight: bolder;
+}
+
+body {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.input {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+input:focus {
+  background-color: lightblue;
+}
+
+.container {
+  background-color: transparent;
+}

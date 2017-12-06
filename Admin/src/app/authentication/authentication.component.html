@@ -1,0 +1,31 @@
+<form (submit)="LogIn()"
+      id="login">
+
+  <div class="container">
+    <label><b>Login</b></label>
+    <br>
+    <input type="text"
+           placeholder="Wprowadź login"
+           name="uname"
+           required
+           [(ngModel)]="login">
+    <br>
+
+    <label>
+      <b>
+        Hasło
+      </b>
+    </label>
+    <br>
+    <input type="password"
+           placeholder="Wprowadź hasło"
+           name="psw"
+           required
+           [(ngModel)]="password">
+    <br>
+    <button type="submit">
+      Login
+    </button>
+    <br>
+  </div>
+</form>

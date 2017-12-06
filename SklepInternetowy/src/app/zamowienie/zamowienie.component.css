@@ -1,0 +1,49 @@
+#formularz {
+  margin-right: 10%;
+  background-color: lightgrey;
+  border-radius: 25px;
+  background: -webkit-linear-gradient(left top, lightgrey , white); /* Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, lightgrey , white); /* Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, lightgrey , white); /* Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, lightgrey , white); /* Standard syntax */
+}
+
+body {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.Naglowek {
+  font-family: "Georgia", serif;
+  font-size: 17px;
+  font-weight: bolder;
+  margin-left: 3%;
+}
+
+.mNaglowek {
+  font-family: "Georgia", serif;
+  font-size: 13px;
+  font-weight: bolder;
+  margin-left: 3%;
+}
+
+.input {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  background-color: lightgreen;
+}
+
+.ng-invalid:not(form)  {
+  background-color: lightcoral;
+}
+
+#zamow {
+  margin-left: 3%;
+}
+
+.container {
+  background-color: transparent;
+}

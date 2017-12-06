@@ -1,0 +1,49 @@
+<div class="btn-group-vertical">
+  <div>
+    <button type="button"
+            class="btn btn-primary"
+            (click)="stronaGlowna('Str')">
+      Strona główna
+    </button>
+  </div>
+  <div>
+    <input type="text"
+           id="nazwaInput"
+           [(ngModel)]="szukanaNazwa"
+           placeholder="Wpisz szukany produkt"
+           (change)="zmienFiltr()">
+    <button type="button"
+            class="btn btn-primary"
+            (click)="szukaj()"
+            id="filtrNazwa">
+      Szukaj
+    </button>
+  </div>
+  <div>
+    <input type="number"
+           id="minCena"
+           [(ngModel)]="minimalnaCena"
+           placeholder="Minimalna cena"
+           (change)="wyslijMin()">
+    <input type="number"
+           id="maxCena"
+           [(ngModel)]="maksymalnaCena"
+           placeholder="Maksymalna cena"
+           (change)="wyslijMax()">
+    <button type="button"
+            class="btn btn-primary"
+            (click)="szukaj()">
+      Filtruj
+    </button>
+  </div>
+  <div *ngFor="let kategoria of kategorie"
+       [class.wybrany]="sprawdzKategorie(kategoria)">
+    <button type="button"
+            class="btn btn-primary"
+            (click)="zmienKategorie(kategoria)">
+      {{kategoria}}
+    </button>
+  </div>
+</div>
+
+

@@ -1,0 +1,37 @@
+<app-pasek-gorny></app-pasek-gorny>
+<body class="container">
+
+<form (submit)="zaloguj()"
+      id="formularz">
+
+  <div class="Naglowek">
+    <label><b>Login</b></label>
+    <br>
+
+    <input type="text"
+           placeholder="Wprowadź login"
+           name="uname"
+           required
+           [(ngModel)]="login">
+    <br>
+    <br>
+    <label>
+      <b>
+        Hasło
+      </b>
+    </label>
+    <br>
+    <input type="password"
+           placeholder="Wprowadź hasło"
+           name="psw"
+           required
+           [(ngModel)]="haslo">
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary">
+      Zaloguj
+    </button>
+    <br>
+  </div>
+</form>
+</body>

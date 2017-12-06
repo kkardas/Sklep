@@ -1,0 +1,39 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/front">SKLEP SPORTOWY</a>
+    </div>
+    <p class="nav navbar-nav navbar-right" id="Koszyk">
+      <button class="btn btn-default navbar-btn"
+              routerLink="/rejestracja">
+        Rejestracja
+      </button>
+      <span class="navbar-text">
+        Koszyk: {{getIloscPrzedmiotowWKoszyku()}} produkt(ów), {{getSumaWartosciWKoszyku() | currency: 'PLN'}}
+      </span>
+      <button class="btn btn-default navbar-btn"
+              routerLink="/koszyk">
+        <span class="glyphicon glyphicon-shopping-cart"></span> Do kasy
+      </button>
+      <div *ngIf="!zalogowany(); else Logowanie">
+        <button class="btn btn-default navbar-btn"
+                routerLink="/login">
+          Logowanie
+        </button>
+      </div>
+      <ng-template #Logowanie>
+        <span class="navbar-text">
+          Jesteś zalogowany jako {{username}}
+        </span>
+        <button class="btn btn-default navbar-btn"
+                (click)="wyloguj()"
+                routerLink="/front">
+          Wyloguj
+        </button>
+        <button class="btn btn-default navbar-btn"
+                routerLink="/historia">
+          Historia zamówień
+        </button>
+      </ng-template>
+  </div>
+</nav>

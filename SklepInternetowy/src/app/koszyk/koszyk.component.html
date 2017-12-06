@@ -1,0 +1,47 @@
+<app-pasek-gorny></app-pasek-gorny>
+<div class="container">
+  <h2>Twój koszyk na zakupy:</h2>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Ilość</th>
+      <th>Nazwa</th>
+      <th>Cena</th>
+      <th>Wartość</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let produkt of produkty">
+      <tr>
+        <td>{{getIlosc(produkt._id)}}</td>
+        <td>{{produkt.nazwa}}</td>
+        <td>{{produkt.cena - produkt.cena * produkt.promocja / 100}}</td>
+        <td>{{getWartosc(produkt.cena, getIlosc(produkt._id), produkt.promocja)}}</td>
+        <td>
+          <button type="button"
+                  class="btn btn-warning"
+                  (click)="usunZKoszyka(produkt._id)">
+            Usuń
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>Wartość całkowita:</td>
+      <td>{{getSumaCenWKoszyku()}}</td>
+    </tr>
+  </table>
+  <div>
+    <button type="button"
+            class="btn btn-primary"
+            routerLink="/front">
+      Kontynuuj zakupy
+    </button>
+    <button type="button"
+            class="btn btn-primary"
+            routerLink="/zamowienie">
+      Złóż zamówienie
+  </button>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+button {
+  width: 90%;
+}
+
+div {
+  width: 100%;
+}
+
+.wybrany button {
+  background-color: darkblue;
+}
+
+button {
+  margin-bottom: 3%;
+  margin-top: 3%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.btn-group-vertical {
+  background-color: lightgrey;
+  border-radius: 25px;
+}
+
+#nazwaInput {
+  margin-left: 5%;
+  width: 90%;
+}
+
+#minCena {
+margin-left: 5%;
+width: 42%;
+}
+
+#maxCena {
+  margin-left: 5%;
+  width: 42%;
+}
+
+#filtrNazwa {
+  width: 90%;
+}

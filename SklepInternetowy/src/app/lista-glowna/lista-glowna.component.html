@@ -1,0 +1,18 @@
+<div *ngIf="wybrano; else NieWybrano" class="lista">
+  <span id="Naglowek">
+    Wyniki wyszukiwania:
+  </span>
+  <div *ngFor="let produkt of produkty | paginate: {itemsPerPage: 3, currentPage: aktualnaStrona}"
+        class="paginacja">
+    <app-produkt [produkt]="produkt"></app-produkt>
+  </div>
+  <pagination-controls (pageChange)="aktualnaStrona =$event"
+                       previousLabel="Poprzednia"
+                       nextLabel="Następna"></pagination-controls>
+  <br>
+</div>
+<ng-template #NieWybrano>
+  <div class="lista">
+    <app-karuzela></app-karuzela>
+  </div>
+</ng-template>

@@ -1,0 +1,53 @@
+<nav>
+  <app-pasek-gorny></app-pasek-gorny>
+</nav>
+
+<body>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Adres</th>
+    <th>Wartość</th>
+    <th>Status</th>
+    <th>Szczegóły</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let zamowienie of zamowienia">
+  <tr>
+    <td>{{zamowienie.adres}}</td>
+    <td>{{zamowienie.wartosc}}</td>
+    <td>
+      <p *ngIf="zamowienie.zrealizowane; else Niezrealizowane">
+        Zrealizowane
+      </p>
+      <ng-template #Niezrealizowane>
+        Nierealizowane
+      </ng-template>
+    </td>
+    <td>
+      <button type="button"
+              class="btn btn-info"
+              (click)="getDetailsOrder(zamowienie)">
+        Pokaż szczegóły
+      </button>
+    </td>
+  </tr>
+  <div *ngIf="zamowienie._id == selectedId">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>Nazwa</th>
+        <th>Ilość</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let product of productsInDetails">
+      <tr>
+        <td>{{product.nazwa}}</td>
+        <td>{{product.ilosc}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  </tbody>
+</table>
+</body>

@@ -1,0 +1,94 @@
+<nav>
+  <app-navigation></app-navigation>
+</nav>
+<body>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Cena</th>
+      <th>Opis</th>
+      <th>Kategoria</th>
+      <th>Edycja</th>
+      <th>Promocja</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let product of products">
+    <tr>
+      <td>
+        <input [(ngModel)]="product.nazwa">
+      </td>
+      <td>
+        <input [(ngModel)]="product.cena">
+      </td>
+      <td>
+        <input [(ngModel)]="product.opis">
+      </td>
+      <td>
+        <input [(ngModel)]="product.kategoria">
+      </td>
+      <td>
+        <button type="button"
+                class="btn btn-warning"
+                (click)="updateInDatabase(product)">
+          Zapisz zmiany
+        </button>
+        <button type="button"
+                class="btn btn-danger"
+                (click)="deleteFromDatabase(product._id)">
+          Usuń z bazy
+        </button>
+      </td>
+      <td>
+        <input type="checkbox" (change)="addToDiscount(product._id)">
+      </td>
+    </tr>
+    </tbody>
+    <tr>
+      <td>
+        <input [(ngModel)]="productToAdd.nazwa">
+      </td>
+      <td>
+        <input [(ngModel)]="productToAdd.cena">
+      </td>
+      <td>
+        <input [(ngModel)]="productToAdd.opis">
+      </td>
+      <td>
+        <input [(ngModel)]="productToAdd.kategoria">
+      </td>
+      <td>
+        <input type="url" [(ngModel)]="zdj">
+      </td>
+      <td>
+        <button type="button"
+                class="btn btn-success"
+                (click)="addToDatabase()">
+          Dodaj do bazy
+        </button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <span> Czas trwania promocji: </span>
+      </td>
+      <td>
+        <input [(ngModel)]="discountService.promotion.czasTrwania">
+      </td>
+      <td>
+        <span> Procentowa obniżka: </span>
+      </td>
+      <td>
+        <input [(ngModel)]="discountService.promotion.obnizka">
+      </td>
+      <td>
+        <button type="button"
+                class="btn btn-info"
+                (click)="addPromotion()">
+          Dodaj promocję
+        </button>
+      </td>
+    </tr>
+  </table>
+</body>

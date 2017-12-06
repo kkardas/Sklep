@@ -1,0 +1,36 @@
+<div class="well well-lg">
+  <div>
+    <span id="nazwa">
+      <div *ngIf="produkt.zdjecie.length > 0; else BezZdjec">
+        <img src={{produkt.zdjecie[0]}} height="200" width="200" class="top">
+      </div>
+      <ng-template #BezZdjec>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn8DJArnR2jExIFwp3WGTY3p-dwT5gTsf8ne6LHGEevkgm6qsQ-Q" height="200" width="200" class="top">
+      </ng-template>
+      {{produkt.nazwa}}
+        <button class="btn-success"
+                id="doKoszyka"
+                (click)="dodajDoKoszyka(produkt._id)">
+          Dodaj do koszyka
+        </button>
+        <div class="well well-sm" id="cena">
+          {{produkt.cena - produkt.cena * produkt.promocja / 100 | currency:'PLN'}}
+        </div>
+      <div class="opis">
+        {{produkt.opis}}
+      </div>
+    </span>
+  </div>
+  <div *ngIf="produkt.promocja > 0">
+    <img src="http://www.aquateam.pl/wp-content/uploads/2016/06/promocja1.png" height="100" width="100"> -{{produkt.promocja}}%
+  </div>
+
+  <button (click)="modal = !modal" class="btn">Szczegóły</button>
+  <app-modal [(visible)]="modal">
+    <h1>{{produkt.opis}}</h1>
+    <div *ngFor="let zdjecie of produkt.zdjecie">
+      <img src={{zdjecie}} class="imgM">
+    </div>
+    <button (click)="modal = !modal" class="btn">Close</button>
+  </app-modal>
+</div>

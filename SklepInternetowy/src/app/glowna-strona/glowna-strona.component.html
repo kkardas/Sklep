@@ -1,0 +1,16 @@
+<app-pasek-gorny></app-pasek-gorny>
+<body>
+  <app-pasek-boczny [kategorie]="kategorie"
+                    [wybraneKategorie]="wybraneKategorie"
+                    class="col-sm-3"
+                    (kategoria)="zmienionoKategorie($event)"
+                    (filtNazwy)="zapiszFiltr($event)"
+                    (szukajFiltr)="getProd($event)"
+                    (minCena)="zapiszMin($event)"
+                    (maxCena)="zapiszMax($event)">
+  </app-pasek-boczny>
+  <app-lista-glowna [produkty]="produkty"
+                    [wybrano]="wybrano"
+                    class="col-sm-9">
+  </app-lista-glowna>
+</body>

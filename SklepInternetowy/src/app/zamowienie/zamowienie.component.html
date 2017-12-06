@@ -1,0 +1,63 @@
+<app-pasek-gorny></app-pasek-gorny>
+<body class="container">
+  <form id="formularz"
+        #zamowienieForm="ngForm">
+    <div class="form-group">
+      <label class="Naglowek">
+        Odbiorca:
+      </label>
+      <br>
+      <label class="mNaglowek">
+        Imię i nazwisko
+      </label>
+      <br>
+      <div class="input">
+        <input type="text"
+               class="form-control"
+               required
+               [(ngModel)]="nazwisko"
+               name="nazwisko"
+               pattern="^[A-Za-z]+ [A-Za-z]+"
+               #zamowienieNazwisko="ngModel">
+        <br>
+        <div [hidden]="zamowienieNazwisko.valid ||
+                       zamowienieNazwisko.pristine"
+             class="alert alert-danger">
+          Proszę podać imię i nazwisko
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <label class="Naglowek">
+      Adres:
+    </label>
+    <br>
+    <label class="mNaglowek">
+      Nazwa ulicy
+    </label>
+    <div class="input">
+      <input type="text"
+             class="form-control"
+             required
+             [(ngModel)]="adres"
+             name="adres"
+             pattern="^[A-Za-z\ 0-9]+ \d{1,}[a-z]?"
+             #zamowienieAdres="ngModel">
+      <br>
+      <div [hidden]="zamowienieAdres.valid ||
+                     zamowienieAdres.pristine"
+           class="alert alert-danger">
+        Proszę podać nazwę ulicy
+      </div>
+    </div>
+    <button [disabled]="!zamowienieAdres.valid ||
+                        !zamowienieNazwisko.valid"
+            class="btn btn-primary navbar-btn"
+            id="zamow"
+            (click)="dokonajZamowienia()">
+      Zakończ zamówienie
+    </button>
+  </form>
+</body>
+

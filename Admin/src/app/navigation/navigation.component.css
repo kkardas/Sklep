@@ -1,0 +1,9 @@
+button {
+  margin-top: 5px;
+}
+
+.navbar-inverse {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
